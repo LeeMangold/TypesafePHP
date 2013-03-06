@@ -3,6 +3,11 @@ TypesafePHP
 
 Typesafety library for PHP primitives
 
+I created this fot two primary reasons:
+1. PHP has come a long way, and it appears there are plans to add the option for
+primitive type-safety. However, that is not yet reality. 
+2. I wanted to start a GitHub project and get some experience with Git.
+
 ##EXAMPLE: 
 
 ```php
@@ -31,3 +36,7 @@ $intC = new Integer($intA() * $intB());
 echo $intC;
 
 ```
+
+This approach is not without its limitations. Most notably, the use of these
+classes involves the loading of another file on the file system, and the memory
+overhead associated with instantiating another object.   
