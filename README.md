@@ -5,6 +5,8 @@ Typesafety library for PHP primitives
 
 EXAMPLE: 
 
+<code>
+
 <?php
 
 require_once "Integer.class.php";
@@ -27,3 +29,5 @@ $intC = new Integer($intA() * $intB());
 
 //Echo an integer 
 echo $intC;
+</code>
+
