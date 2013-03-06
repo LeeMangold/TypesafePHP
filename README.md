@@ -3,9 +3,9 @@ TypesafePHP
 
 Typesafety library for PHP primitives
 
-EXAMPLE: 
+##EXAMPLE: 
 
-<code>
+```php
 
 <?php
 
@@ -29,5 +29,5 @@ $intC = new Integer($intA() * $intB());
 
 //Echo an integer 
 echo $intC;
-</code>
 
+```
