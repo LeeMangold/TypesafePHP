@@ -10,7 +10,7 @@
 class Boolean {
 
     /** @var bool The Boolean value being stored */
-    public $booleanValue; 
+    private $booleanValue = false; 
 
 
     /**
@@ -18,10 +18,10 @@ class Boolean {
     *
     * @param mixed $input The initial value to set the Boolean with 
     */
-    function __construct( $input  ) 
+    function __construct( $input = false  ) 
     {
         
-        if ( is_null($input) ) throw new Exception('Boolean constructor requires one(1) arg');
+        if ( is_null($input) ) $this->boolean = false; 
 
         /**
         * note: PHP 5.5.0 or greater only for boolval
@@ -69,12 +69,30 @@ class Boolean {
     }
     
     /**
-    * Get the value of the Boolean
+    * Get\Set the value of the Boolean
     *
+    * @param mixed $input The setter value
     * @return bool return the value of the Boolean as a bool.
     */
-    public function val() {
-        return (bool)$this->booleanValue;
+    public function val( $input = null ) {
+
+        if ( $input == null && !is_bool($input) ) {
+
+            return (bool)$this->booleanValue;
+        
+        } else {
+            
+            if (!empty($input) && ($input > 0 || strtoupper($input) == "TRUE")) 
+            {
+                $this->booleanValue = 1;
+            }
+            else
+            {
+                $this->booleanValue = 0;
+            }
+
+        }
+
     }
     
     /**
@@ -83,7 +101,9 @@ class Boolean {
     * @return string return the value of the Boolean as a bool.
     */
     public function __toString() {
+
         return (string)$this->booleanValue;
+
     }
 
 }

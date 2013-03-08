@@ -18,7 +18,7 @@ class Integer {
     *
     * @param mixed $input The initial value to set the Integer with 
     */
-    function __construct( $input  ) 
+    function __construct( $input ) 
     {
     
         if ( is_null($input) ) throw new Exception('Integer constructor requires one(1) arg');
@@ -57,14 +57,23 @@ class Integer {
     }
     
     /**
-    * Get the value of the Integer
+    * Get\Set the value of the Integer
     *
+    * @param mixed $input The setter value 
     * @return int return the value of the integer as an int. 
     */
-    public function val() 
+    public function val( $input = null ) 
     {
     
-        return (int)$this->integerValue;
+        if ( $input == null ) {
+            
+            return (int)$this->integerValue;
+
+        } else {
+
+           $this->integerValue = $input;
+
+        }
     
     }
     

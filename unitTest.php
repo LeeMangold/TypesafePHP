@@ -1,6 +1,7 @@
 <?
 require_once "/usr/share/pear/PHPUnit/Autoload.php";
 require_once "Integer.class.php";
+require_once "Boolean.class.php";
 
 /**
 * PHPUnit Test
@@ -30,6 +31,24 @@ class Test extends PHPUnit_Framework_TestCase
         $this->assertEquals($b(), 6);
 
         $this->assertEquals($a() + $b(), 11);
+
+        $b->val(5);
+        $this->assertEquals($a() + $b(), 10);
+
+
+    }
+
+    public function testBoolean() 
+    {
+
+        $a = new Boolean(true);
+        $this->assertTrue($a());
+
+        $a->val(false);
+        $this->assertFalse($a());
+    
+        $b = new Boolean(false);
+        $this->assertFalse( $a->compareTo( $b ) );
 
     }
 
