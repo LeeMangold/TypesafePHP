@@ -42,6 +42,9 @@ type safety.
 */
 $intC = new Integer($intA() * $intB());
 
+//Access the setter, set equals to 10
+$intC->val(10);
+
 //Echo an integer 
 echo $intC;
 
