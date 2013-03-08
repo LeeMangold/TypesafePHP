@@ -11,6 +11,13 @@ primitive type-safety. However, that is not yet reality.
 2.  I wanted to start a GitHub project and get some experience with Git.
 
 
+It is important to note that this approach is not without its limitations. Most
+notably, the use of these classes involves the loading of another file on the 
+file system, and the memory overhead associated with instantiating another 
+object. While the impact may be negligable in most cases, it is still worth
+noting.  
+
+
 ##EXAMPLE: 
 
 ```php
@@ -40,6 +47,3 @@ echo $intC;
 
 ```
 
-This approach is not without its limitations. Most notably, the use of these
-classes involves the loading of another file on the file system, and the memory
-overhead associated with instantiating another object.   

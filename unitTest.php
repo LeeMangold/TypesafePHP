@@ -2,6 +2,8 @@
 require_once "/usr/share/pear/PHPUnit/Autoload.php";
 require_once "Integer.class.php";
 require_once "Boolean.class.php";
+require_once "Float.class.php";
+require_once "Double.class.php";
 
 /**
 * PHPUnit Test
@@ -52,6 +54,35 @@ class Test extends PHPUnit_Framework_TestCase
 
     }
 
+    public function testFloat() 
+    {
+
+        $a = new Float(1.2);
+        $this->assertEquals($a(), 1.2);
+        $a->val(1.5);
+        $this->assertEquals($a(), 1.5);
+
+        $b = new Float(1.5);
+        $this->assertTrue( $a->compareTo($b) );
+        $b->val(1.2);
+        $this->assertFalse( $a->compareTo($b) );
+
+    }
+
+    public function testDouble() 
+    {
+
+        $a = new Double(1.2);
+        $this->assertEquals($a(), 1.2);
+        $a->val(1.5);
+        $this->assertEquals($a(), 1.5);
+
+        $b = new Double(1.5);
+        $this->assertTrue( $a->compareTo($b) );
+        $b->val(1.2);
+        $this->assertFalse( $a->compareTo($b) );
+
+    }
 
 }
 
