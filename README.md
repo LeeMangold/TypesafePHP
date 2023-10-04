@@ -3,7 +3,7 @@ TypesafePHP
 
 Typesafety library for PHP primitives
 
-I created this fot two primary reasons:
+I created this for two primary reasons:
 
 1.  PHP has come a long way, and it appears there are plans to add the option for
 primitive type-safety. However, that is not yet reality. 
@@ -50,3 +50,5 @@ echo $intC;
 
 ```
 
+# Notice
+This is no longer required in later versions of PHP. 
